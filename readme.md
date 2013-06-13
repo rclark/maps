@@ -1,4 +1,4 @@
-# are you serious??!
+# [are you serious??!](https://github.com/blog/1528-there-s-a-map-for-that)
 
 ## How I did this:
 
