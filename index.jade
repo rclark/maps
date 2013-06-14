@@ -1,9 +1,13 @@
 !!!html
 html(lang="en", style="height:100%; width:100%; padding:0; margin:0;")
     head
-        link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
+        link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")        
+    body(style="height:100%; width:100%; padding:0; margin:0;")
+        #map(style="height:100%; width:100%; padding:0; margin:0;")
+        
         script(src="http://d3js.org/topojson.v1.min.js")
         script(src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js")
+        script(src="style.js")
         script
             L.TopoJSON = L.GeoJSON.extend({
               addData: function(jsonData) {
@@ -18,18 +22,15 @@ html(lang="en", style="height:100%; width:100%; padding:0; margin:0;")
                 }
               }
             });
-    body(style="height:100%; width:100%; padding:0; margin:0;")
-        #map(style="height:100%; width:100%; padding:0; margin:0;")
-
         script
             var map = new L.Map("map", {
                 center: new L.LatLng(32.1855, -110.4356),
-                zoom: 13,
+                zoom: 12,
                 layers: [new L.TileLayer("http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg")]
             });
 
             function jsonp(data) {
-                var polys = new L.TopoJSON(data);
+                var polys = new L.TopoJSON(data, { style: polyStyle });
                 polys.addTo(map);
             }
 
