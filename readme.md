@@ -12,4 +12,4 @@
     git commit -m "initial commit"
     git push
 
-### Step #3: [Profit.](https://github.com/rclark/maps/blob/master/happy-valley-polys.geojson) 
+### Step #3: [Profit!](https://github.com/rclark/maps/blob/master/happyvalley.geojson) 
